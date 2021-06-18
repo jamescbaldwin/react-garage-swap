@@ -3,7 +3,9 @@ import React from "react";
 const HomeScreen = ({ navigation }) => {
   return (
     <div>
-      <p>Welcome to Garage-Swap</p>
+      <div className="homeHeader">
+        <p>Garage-Swap</p>
+      </div>
     </div>
   );
 };

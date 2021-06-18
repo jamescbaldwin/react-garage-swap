@@ -1,6 +1,7 @@
-import "react-native-gesture-handler";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
+import "./App.css";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import HomeScreen from "./Home/HomeScreen";
 import BuyerScreen from "./Buyer/BuyerScreen";
@@ -8,13 +9,37 @@ import SellerScreen from "./Seller/SellerScreen";
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Seller" component={SellerScreen} />
-        <Stack.Screen name="Buyer" component={BuyerScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/sell">Seller</Link>
+            </li>
+            <li>
+              <Link to="/buy">Buyers</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/buy">
+            <BuyerScreen />
+          </Route>
+          <Route path="/sell">
+            <SellerScreen />
+          </Route>
+          <Route path="/">
+            <HomeScreen />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

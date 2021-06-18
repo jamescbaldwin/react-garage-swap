@@ -1,0 +1,13 @@
+body {
+  background-color: lightcoral;
+}
+
+p {
+  color: whitesmoke;
+}
+
+.container {
+  height: "100%";
+  width: "100%";
+  background-color: lavender;
+}

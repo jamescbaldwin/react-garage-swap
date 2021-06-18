@@ -1,22 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import HomeScreen from "./Home/HomeScreen";
+import BuyerScreen from "./Buyer/BuyerScreen";
+import SellerScreen from "./Seller/SellerScreen";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Garage-Swap</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Seller" component={SellerScreen} />
+        <Stack.Screen name="Buyer" component={BuyerScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

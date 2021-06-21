@@ -1,4 +1,5 @@
 import React from "react";
+import Categories from "./Categories";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -6,6 +7,7 @@ const HomeScreen = ({ navigation }) => {
       <div className="homeHeader">
         <p>Garage-Swap</p>
       </div>
+      <Categories />
     </div>
   );
 };

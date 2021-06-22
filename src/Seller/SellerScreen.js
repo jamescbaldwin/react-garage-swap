@@ -1,12 +1,13 @@
 import React from "react";
+import SellerForm from "./SellerForm";
 
 const SellerScreen = () => {
-  return (
+  return ( 
     <div>
-      <div className="sellerHeader">
-        <p>Welcome to the Seller's Page of Garage-Swap</p>
-      </div>
+        <h1 className='sellerHeader'> Garage Swap Seller 's Page</h1> 
+        <SellerForm />
     </div>
+
   );
 };
 

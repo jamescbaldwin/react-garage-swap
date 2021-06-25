@@ -36,16 +36,57 @@ p {
   min-height: 10rem;
 }
 
+.itemGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.listingContainer {
+  width: 20vw;
+  height: 20vw;
+  margin-left: 4vw;
+  margin-top: 2vw;
+  border: rgb(237, 221, 82);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.itemName {
+  font-family: serif;
+  color: whitesmoke;
+}
+
+.itemPrice {
+  font-family: serif;
+  color: rgb(22, 25, 220);
+  font-weight: 600;
+}
+
+.itemSeller {
+  font-family: serif;
+  color: whitesmoke;
+}
+
+.purchaseBtn {
+  background-color: rgb(11, 108, 108);
+  color: rgb(215, 214, 214);
+  width: 10vw;
+  height: 2.5vw;
+  margin-left: 5vw;
+  /* align-self: center; */
+}
+
 /****************************** Seller Page ******************************/
 
 .sellerHeader {
   min-width: 100%;
   background-color: rgb(100, 89, 193);
   min-height: 10rem;
-  margin-right: '45%'
+  margin-right: "45%";
 }
 .sellerForm {
-    background-color: whitesmoke;
-  margin-left: '10%';
+  background-color: whitesmoke;
+  margin-left: "10%";
   max-width: 20;
 }

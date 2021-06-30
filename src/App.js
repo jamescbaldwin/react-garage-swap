@@ -1,5 +1,7 @@
 import React from "react";
-import "./App.css";
+import "./Home/home.css"
+import "./Seller/seller.css";
+import "./Buyer/buyer.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 

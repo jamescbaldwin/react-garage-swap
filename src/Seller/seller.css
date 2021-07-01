@@ -2,11 +2,10 @@
     min-width: 100%;
     background-color: rgb(100, 89, 193);
     min-height: 10rem;
-    margin-right: "45%";
   }
   .sellerForm {
-    background-color: whitesmoke;
-    margin-left: "10%";
-    max-width: 20;
+   padding: 10;
+   margin-left: '10%';
+   background-color: white;
   }
   

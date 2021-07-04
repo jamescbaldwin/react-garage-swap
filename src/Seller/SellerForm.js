@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
+
 
 const SellerForm = () => {
   const options = [
@@ -47,10 +42,9 @@ const SellerForm = () => {
   };
   return (
     <div className={classes.sellerForm}>
+
         <FormControl className={classes.margin} >
-
         <TextField id="standard-basic" label="Item Name" />
-
         <Select
         className={classes.select} 
           native
@@ -88,13 +82,13 @@ const SellerForm = () => {
 
 const useStyles = makeStyles((theme) => ({
   margin: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(3),
   },
   sellerForm: {
     maxWidth: "40%"
   },
   select: {
-padding: 10,
+    padding: 10,
   }
 }));
 

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 
 const SellerForm = () => {
@@ -75,7 +76,13 @@ const SellerForm = () => {
             onChange={handleChange('amount')}
             startAdornment={<InputAdornment position="end">$</InputAdornment>}
           /> */}
+            <div className={classes.button}>
+               <Button variant="outlined" color="red">
+                     Post Item!
+              </Button>
+            </div>
         </FormControl>
+
         </div>
   );
 };
@@ -89,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
   },
   select: {
     padding: 10,
+  },
+ button: {
+    paddingTop: 20 ,
   }
 }));
 

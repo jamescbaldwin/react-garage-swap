@@ -1,25 +1,83 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, List, ListItem, Button } from "@material-ui/core";
 
 const Categories = () => {
   return (
-    <div>
-      <Typography variant="h1" color="secondary" align="left">
-        Shop by Category
+    <List>
+      <Typography variant="h2" color="primary">
+        SHOP BY CATEGORY
       </Typography>
-      <ul className="categoryList">
-        <a>Apparel</a>
-        <a>Automotive</a>
-        <a>Electronics</a>
-        <a>Furtniture & Decor</a>
-        <a>Gaming</a>
-        <a>Jewelry</a>
-        <a>Miscellaneous</a>
-        <a>Outdoor & Garden</a>
-        <a>Sporting Goods</a>
-        <a>Toys & Toddler</a>
-      </ul>
-    </div>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Apparel
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Automotive
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Electronics
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Furniture
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Gaming
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Jewelry
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Miscellaneous
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Outdoor & Garden
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Sporting Goods
+          </Typography>
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button>
+          <Typography variant="h4" color="error" align="left">
+            Toy & Toddler
+          </Typography>
+        </Button>
+      </ListItem>
+    </List>
   );
 };
 

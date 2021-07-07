@@ -6,34 +6,40 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
 
-const SellerForm = () => {
-  const options = [
-    { value: "Apparel", label: "Apparel", id: 1 },
-    { value: "Automotive", label: "Automotive", id: 2 },
-    { value: "Electronics", label: "Electronics", id: 3 },
-    { value: "Furtniture & Decor", label: "Furtniture & Decor", id: 4 },
-    { value: "Gaming", label: "Gaming", id: 5 },
-    { value: "Jewelry", label: "Jewelry", id: 6},
-    { value: "Miscellaneous", label: "Miscellaneous", id: 7 },
-    { value: "Outdoor & Garden", label: "Outdoor & Garden", id: 8 },
-    { value: "Sporting Goods", label: "Sporting Goods", id: 9 },
-    { value: "Toys & Toddler", label: "Toys & Toddler", id: 10 },
-  ];
+// const SellerForm = () => {
+  // const options = [
+  //   { value: "Apparel", label: "Apparel", id: 1 },
+  //   { value: "Automotive", label: "Automotive", id: 2 },
+  //   { value: "Electronics", label: "Electronics", id: 3 },
+  //   { value: "Furtniture & Decor", label: "Furtniture & Decor", id: 4 },
+  //   { value: "Gaming", label: "Gaming", id: 5 },
+  //   { value: "Jewelry", label: "Jewelry", id: 6},
+  //   { value: "Miscellaneous", label: "Miscellaneous", id: 7 },
+  //   { value: "Outdoor & Garden", label: "Outdoor & Garden", id: 8 },
+  //   { value: "Sporting Goods", label: "Sporting Goods", id: 9 },
+  //   { value: "Toys & Toddler", label: "Toys & Toddler", id: 10 },
+  // ];
   
-  const classes = useStyles();
-  // const [values, setValues] = React.useState({
-  //   amount: '',
-  //   password: '',
-  //   weight: '',
-  //   weightRange: '',
-  //   showPassword: false,
-  // });
+  
 
+  function SellerForm({ addChoreLog }) {
+  const [cat1, setcat1] = useState();
+  const [cat2, setcat2] = useState();
+  const [cat3, setcat3] = useState();
+
+  const handleSubmit= (e) => {
+    addChoreLog([cat1, cat2, cat3])
+    e.preventDefault();
+  }
+
+  // FOR CATEGORY DROP DOWN OPTIONS
   const [state, setState] = useState({
-   age: '',
-    name: 'casey'
-  });
+    age: '',
+     name: 'casey'
+   });
+  const classes = useStyles();
 
+// FOR CATEGORY DROP DOWN OPTIONS
   const handleChange = (event) => {
     const name = event.target.name;
     setState({
@@ -41,7 +47,10 @@ const SellerForm = () => {
       [name]: event.target.value,
     });
   };
+
+
   return (
+    // <form onSubmit={e => {handleSubmit(e)}}>
     <div className={classes.sellerForm}>
 
         <FormControl className={classes.margin} >
@@ -52,7 +61,7 @@ const SellerForm = () => {
           value={state.category}
           onChange={handleChange}
           inputProps={{
-            name: 'age',
+            name: '',
             id: 'age-native-simple',
           }}
         >
@@ -67,9 +76,9 @@ const SellerForm = () => {
           <option>Toys & Toddler</option>
         </Select>
 
-        <TextField id="standard-basic" label="Item Price" />
-        <TextField id="standard-basic" label="Another Category" />
-        <TextField id="standard-basic" label="And Another Category" />
+        <TextField id="standard-basic" label="Item Price" onChange={e => setcat1(e.target.value)} value={cat1}/>
+        <TextField id="standard-basic" label="Another Category" onChange={e => setcat2(e.target.value)} value={cat2}/>
+        <TextField id="standard-basic" label="And Another Category" onChange={e => setcat3(e.target.value)} value={cat3}/>
             {/* <Input
             className={classes.numberInput}
             value={values.amount}
@@ -84,6 +93,7 @@ const SellerForm = () => {
         </FormControl>
 
         </div>
+        // </form>
   );
 };
 

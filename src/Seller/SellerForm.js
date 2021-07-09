@@ -23,13 +23,18 @@ import Button from '@material-ui/core/Button';
   
 
   function SellerForm({ addChoreLog }) {
-  const [cat1, setcat1] = useState();
-  const [cat2, setcat2] = useState();
-  const [cat3, setcat3] = useState();
+  const [cat1, setcat1] = useState('');
+  const [cat2, setcat2] = useState('');
+  const [cat3, setcat3] = useState('');
 
   const handleSubmit= (e) => {
     addChoreLog([cat1, cat2, cat3])
     e.preventDefault();
+  }
+
+
+  const submitButton= () => {
+console.log('ITEM POSTED')
   }
 
   // FOR CATEGORY DROP DOWN OPTIONS
@@ -37,6 +42,7 @@ import Button from '@material-ui/core/Button';
     age: '',
      name: 'casey'
    });
+
   const classes = useStyles();
 
 // FOR CATEGORY DROP DOWN OPTIONS
@@ -48,24 +54,23 @@ import Button from '@material-ui/core/Button';
     });
   };
 
+   return (
+      <form onSubmit={e => {handleSubmit(e)}}>
+           <div className={classes.sellerForm}>
 
-  return (
-    // <form onSubmit={e => {handleSubmit(e)}}>
-    <div className={classes.sellerForm}>
-
-        <FormControl className={classes.margin} >
-        <TextField id="standard-basic" label="Item Name" />
-        <Select
+               <FormControl className={classes.margin} >
+              <TextField id="standard-basic" label="Item Name" />
+              <Select
         className={classes.select} 
           native
           value={state.category}
           onChange={handleChange}
           inputProps={{
-            name: '',
+            name: 'Categories',
             id: 'age-native-simple',
           }}
         >
-          <option aria-label="None" value="" />
+          <option aria-label="None" value="Categroies" />
           <option>Apparel</option>
           <option>Automotive</option>
           <option>Electronics</option>
@@ -86,14 +91,14 @@ import Button from '@material-ui/core/Button';
             startAdornment={<InputAdornment position="end">$</InputAdornment>}
           /> */}
             <div className={classes.button}>
-               <Button variant="outlined" color="red">
+               <Button variant="outlined" color="red" onPress={submitButton}>
                      Post Item!
               </Button>
             </div>
         </FormControl>
 
         </div>
-        // </form>
+       </form>
   );
 };
 
@@ -102,7 +107,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   sellerForm: {
-    maxWidth: "40%"
+    maxWidth: "40%",
+    borderColor: 'red'
   },
   select: {
     padding: 10,

@@ -3,8 +3,19 @@ import SellerForm from "./SellerForm";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
+
+
 const SellerScreen = () => {
   const classes = useStyles();
+
+  const [name, setName] = useState("");
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    alert(`Submitting Name ${name}`)
+  }
+  
+
   return ( 
       <div>
          <div className={classes.sellerHeader}>

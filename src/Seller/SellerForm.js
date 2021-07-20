@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 
 
 // const SellerForm = () => {
+
+
   // const options = [
   //   { value: "Apparel", label: "Apparel", id: 1 },
   //   { value: "Automotive", label: "Automotive", id: 2 },
@@ -22,31 +24,34 @@ import Button from '@material-ui/core/Button';
   
   
 
-  function SellerForm({ addChoreLog }) {
-  const [cat1, setcat1] = useState('');
-  const [cat2, setcat2] = useState('');
+  function SellerForm({ evt }) {
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [ItemCondition, setItemCondition] = useState('');
   const [cat3, setcat3] = useState('');
 
-  const handleSubmit= (e) => {
-    addChoreLog([cat1, cat2, cat3])
-    e.preventDefault();
-  }
-
+  // const handleSubmit= (e) => {
+  //   addChoreLog([cat1, cat2, cat3])
+  //   e.preventDefault();
+  // }
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    alert(`Submitting Item!`)
+}
 
   const submitButton= () => {
 console.log('ITEM POSTED')
   }
 
-  // FOR CATEGORY DROP DOWN OPTIONS
-  const [state, setState] = useState({
-    age: '',
-     name: 'casey'
-   });
 
-  const classes = useStyles();
+const classes = useStyles();
 
-// FOR CATEGORY DROP DOWN OPTIONS
-  const handleChange = (event) => {
+const [state, setState] = useState({
+  age: '',
+   name: 'casey'
+ });
+
+  const handleCategories = (event) => {
     const name = event.target.name;
     setState({
       ...state,
@@ -55,16 +60,18 @@ console.log('ITEM POSTED')
   };
 
    return (
-      <form onSubmit={e => {handleSubmit(e)}}>
+    <form onSubmit={handleSubmit}>
            <div className={classes.sellerForm}>
 
                <FormControl className={classes.margin} >
-              <TextField id="standard-basic" label="Item Name" />
+
+               <TextField id="standard-basic" label="Item Name" onChange={e => setName(e.target.value)} value={name} /> 
+
               <Select
         className={classes.select} 
           native
           value={state.category}
-          onChange={handleChange}
+          onChange={handleCategories}
           inputProps={{
             name: 'Categories',
             id: 'age-native-simple',
@@ -75,14 +82,14 @@ console.log('ITEM POSTED')
           <option>Automotive</option>
           <option>Electronics</option>
           <option>Gaming</option> 
-          <option>Jewlry</option>
+          <option>Jewelry</option>
           <option>Miscellaneous</option>
           <option>Sporting Goods</option>
           <option>Toys & Toddler</option>
         </Select>
-
-        <TextField id="standard-basic" label="Item Price" onChange={e => setcat1(e.target.value)} value={cat1}/>
-        <TextField id="standard-basic" label="Another Category" onChange={e => setcat2(e.target.value)} value={cat2}/>
+       
+        <TextField id="standard-basic" label="Item Price" onChange={e => setPrice(e.target.value)} value={price}/>
+        <TextField id="standard-basic" label="Item Condition" onChange={e => setItemCondition(e.target.value)} value={ItemCondition}/>
         <TextField id="standard-basic" label="And Another Category" onChange={e => setcat3(e.target.value)} value={cat3}/>
             {/* <Input
             className={classes.numberInput}
@@ -91,7 +98,7 @@ console.log('ITEM POSTED')
             startAdornment={<InputAdornment position="end">$</InputAdornment>}
           /> */}
             <div className={classes.button}>
-               <Button variant="outlined" color="red" onPress={submitButton}>
+               <Button variant="outlined" color="red"  type="submit" value="Submit" onPress={submitButton}>
                      Post Item!
               </Button>
             </div>

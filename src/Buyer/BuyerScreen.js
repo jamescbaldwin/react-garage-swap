@@ -3,11 +3,11 @@ import { Grid, Paper, makeStyles } from "@material-ui/core";
 import Categories from "./Categories";
 import items from "./Items";
 
-const useStyles = makeStyles((theme) => ({
+const styles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "darkGrey",
+    backgroundColor: "#093161",
   },
   paper: {
     display: "flex",
@@ -19,7 +19,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BuyerScreen = () => {
-  const classes = useStyles();
+  const classes = styles();
+
+  const purchaseItem = () => {
+    alert("Are you sure you want to commit to buying this item?");
+  };
 
   return (
     <div className={classes.root}>
@@ -35,7 +39,9 @@ const BuyerScreen = () => {
                 <h4 className="itemName">{item.item}</h4>
                 <h2 className="itemPrice">${item.price}</h2>
                 <h5 className="itemSeller">{item.seller}</h5>
-                <button className="purchaseBtn">Purchase</button>
+                <button className="purchaseBtn" onClick={() => purchaseItem()}>
+                  PURCHASE
+                </button>
               </div>
             ))}
           </div>

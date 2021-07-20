@@ -6,15 +6,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 const SellerScreen = () => {
-  const classes = useStyles();
-
-  const [name, setName] = useState("");
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    alert(`Submitting Name ${name}`)
-  }
-  
 
   return ( 
       <div>

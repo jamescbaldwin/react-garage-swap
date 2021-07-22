@@ -22,7 +22,7 @@ const BuyerScreen = () => {
   const classes = styles();
 
   const purchaseItem = () => {
-    alert("Are you sure you want to commit to buying this item?");
+    alert("This item has been added to you cart!");
   };
 
   return (

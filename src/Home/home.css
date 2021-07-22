@@ -1,28 +1,28 @@
 body {
-    background-color: lightcoral;
+  background-color: lightcoral;
 }
-  
+
 p {
-    color: whitesmoke;
+  color: whitesmoke;
 }
-  
+
 .container {
-    height: "100%";
-    width: "100%";
-    background-color: lavender;
+  height: "100%";
+  width: "100%";
+  background-color: lavender;
 }
 
 .homeHeader {
-    min-width: 100%;
-    background-color: violet;
-    min-height: 10rem;
-}
-  
-  .catListHeader {
+  min-width: 100%;
+  background-color: violet;
+  min-height: 10rem;
 }
 
-  .categoryList {
-    display: flex;
-    flex-direction: column;
-    /* float: left; */
+.catListHeader {
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  /* float: left; */
 }

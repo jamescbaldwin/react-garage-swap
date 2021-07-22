@@ -1,3 +1,9 @@
+:root {
+  --navy: rgb(21, 41, 82);
+  --gold: rgb(220, 174, 22);
+  --lava: rgb(255, 77, 45);
+}
+
 .buyerHeader {
   min-width: 100%;
   background-color: rgb(131, 77, 153);

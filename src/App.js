@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home/home.css"
+import "./Home/home.css";
 import "./Seller/seller.css";
 import "./Buyer/buyer.css";
 
@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomeScreen from "./Home/HomeScreen";
 import BuyerScreen from "./Buyer/BuyerScreen";
 import SellerScreen from "./Seller/SellerScreen";
+import CartScreen from "./Cart/CartScreen";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             <li>
               <Link to="/buy">Buyers</Link>
             </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
           </ul>
         </nav>
 
@@ -38,6 +42,9 @@ function App() {
           </Route>
           <Route path="/">
             <HomeScreen />
+          </Route>
+          <Route path="/cart">
+            <CartScreen />
           </Route>
         </Switch>
       </div>

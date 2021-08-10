@@ -25,6 +25,8 @@ import Button from '@material-ui/core/Button';
   
 
   function SellerForm({ evt }) {
+
+
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [ItemCondition, setItemCondition] = useState('');
@@ -36,7 +38,7 @@ import Button from '@material-ui/core/Button';
   // }
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    alert(`Submitting Item!`)
+    alert("Submitting Item" )
 }
 
   const submitButton= () => {
@@ -44,28 +46,36 @@ console.log('ITEM POSTED')
   }
 
 
-const classes = useStyles();
-
 const [state, setState] = useState({
   age: '',
    name: 'casey'
  });
 
+//  const handleName = (event) => {
+//   const name = event.target.name;
+//   setState({
+//     ...state,
+//     [name]: event.target.value,
+//   });}
+  const handleClick = value => console.log(value);
   const handleCategories = (event) => {
-    const name = event.target.name;
     setState({
       ...state,
       [name]: event.target.value,
+     
     });
   };
-
+  const classes = useStyles();
    return (
     <form onSubmit={handleSubmit}>
+      <div className={classes.form}>
            <div className={classes.sellerForm}>
 
                <FormControl className={classes.margin} >
 
-               <TextField id="standard-basic" label="Item Name" onChange={e => setName(e.target.value)} value={name} /> 
+               <TextField id="standard-basic" label="Item Name"
+                onChange={e => setName(e.target.value)} 
+                /> 
 
               <Select
         className={classes.select} 
@@ -98,13 +108,13 @@ const [state, setState] = useState({
             startAdornment={<InputAdornment position="end">$</InputAdornment>}
           /> */}
             <div className={classes.button}>
-               <Button variant="outlined" color="red"  type="submit" value="Submit" onPress={submitButton}>
+               <Button variant="outlined" color="red" onSubmit={handleClick}  type="submit" value="Submit" onPress={submitButton}>
                      Post Item!
               </Button>
             </div>
-        </FormControl>
-
-        </div>
+                  </FormControl>
+             </div>
+           </div>
        </form>
   );
 };
@@ -113,9 +123,13 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(3),
   },
+ form: {
+  direction: 'flex',
+  paddingLeft: '35%',
+  width: '100%'
+  },
   sellerForm: {
-    maxWidth: "40%",
-    borderColor: 'red'
+    alignItems: 'center',
   },
   select: {
     padding: 10,

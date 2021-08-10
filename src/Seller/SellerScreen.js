@@ -3,10 +3,8 @@ import SellerForm from "./SellerForm";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-
-
 const SellerScreen = () => {
-
+  const classes = useStyles();
   return ( 
       <div>
          <div className={classes.sellerHeader}>
@@ -22,7 +20,8 @@ const SellerScreen = () => {
 const useStyles = makeStyles((theme) => ({
   sellerHeader: {
     minWidth: '100%',
-    backgroundColor: 'grey',
+    backgroundColor: 'transparent',
+    
     height: 100,
   },
   sellerForm: {
